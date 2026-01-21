@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
+import ParticleBackground from "./ParticleBackground";
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -13,6 +14,9 @@ const HeroSection = () => {
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
     >
+      {/* Particle background */}
+      <ParticleBackground />
+
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
