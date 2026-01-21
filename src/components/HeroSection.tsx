@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import ParticleBackground from "./ParticleBackground";
+import TypewriterText from "./TypewriterText";
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -40,14 +41,13 @@ const HeroSection = () => {
           Jesu Mariya Joe D
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-12"
-        >
-          Full Stack Developer, Cybersecurity Solutions
-        </motion.p>
+        <div className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-12 h-8">
+          <TypewriterText
+            text="Full Stack Developer, Cybersecurity Solutions"
+            delay={1200}
+            speed={40}
+          />
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
