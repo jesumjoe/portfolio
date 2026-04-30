@@ -38,8 +38,8 @@ const ContactSection = () => {
               Contact
             </h2>
             <p className="text-muted-foreground mb-8 max-w-md">
-              Interested in working together or have a question? 
-              Feel free to reach out. I'm always open to discussing new projects 
+              Interested in working together or have a question?
+              Feel free to reach out. I'm always open to discussing new projects
               and opportunities.
             </p>
 
@@ -49,7 +49,7 @@ const ContactSection = () => {
                   Address
                 </h4>
                 <p className="text-muted-foreground">
-                  Chennai, Tamil Nadu, India
+                  Bengaluru, Karnataka, India
                 </p>
               </div>
 
@@ -58,16 +58,16 @@ const ContactSection = () => {
                   E-mail
                 </h4>
                 <a
-                  href="mailto:jesumaria@example.com"
+                  href="mailto:jesumjoe@gmail.com"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  jesumaria@example.com
+                  jesumjoe@gmail.com
                 </a>
               </div>
 
               <div className="flex gap-4 pt-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/jesumjoe"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-card border border-border rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
@@ -78,7 +78,7 @@ const ContactSection = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/jesumjoe"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-card border border-border rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"

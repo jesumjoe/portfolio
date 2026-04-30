@@ -2,6 +2,13 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const ProjectsSection = () => {
   return (
@@ -23,60 +30,76 @@ const ProjectsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Link to={`/project/${project.id}`}>
-                <div className="group bg-card border border-border rounded-lg overflow-hidden card-hover h-full">
-                  {/* Project Image Placeholder */}
-                  <div className="aspect-video bg-secondary/50 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="font-display text-2xl text-muted-foreground/50 group-hover:text-primary/50 transition-colors">
-                        {project.title.charAt(0)}
-                      </span>
-                    </div>
-                  </div>
+        <div className="w-full max-w-5xl mx-auto px-4">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {projects.map((project, index) => (
+                <CarouselItem key={project.id} className="pl-4 md:basis-1/2 lg:basis-1/3 h-auto">
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="h-full"
+                  >
+                    <Link to={`/project/${project.id}`} className="block h-full">
+                      <div className="group bg-card border border-border rounded-lg overflow-hidden card-hover h-full flex flex-col">
+                        {/* Project Image Placeholder */}
+                        <div className="aspect-video bg-secondary/50 relative overflow-hidden shrink-0">
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="font-display text-2xl text-muted-foreground/50 group-hover:text-primary/50 transition-colors">
+                              {project.title.charAt(0)}
+                            </span>
+                          </div>
+                        </div>
 
-                  {/* Project Content */}
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
-                      <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-                    </div>
+                        {/* Project Content */}
+                        <div className="p-6 flex flex-col grow">
+                          <div className="flex items-start justify-between mb-3">
+                            <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                              {project.title}
+                            </h3>
+                            <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                          </div>
 
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                      {project.description}
-                    </p>
+                          <p className="text-muted-foreground text-sm mb-4 line-clamp-2 grow">
+                            {project.description}
+                          </p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.slice(0, 3).map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-1 bg-secondary text-xs text-muted-foreground rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                      {project.tags.length > 3 && (
-                        <span className="px-2 py-1 text-xs text-muted-foreground">
-                          +{project.tags.length - 3}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                          <div className="flex flex-wrap gap-2 mt-auto">
+                            {project.tags.slice(0, 3).map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-2 py-1 bg-secondary text-xs text-muted-foreground rounded"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                            {project.tags.length > 3 && (
+                              <span className="px-2 py-1 text-xs text-muted-foreground">
+                                +{project.tags.length - 3}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden md:block">
+              <CarouselPrevious className="-left-12 lg:-left-20" />
+              <CarouselNext className="-right-12 lg:-right-20" />
+            </div>
+          </Carousel>
         </div>
       </div>
     </section>

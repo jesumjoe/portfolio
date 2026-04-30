@@ -91,7 +91,7 @@ const HeroSection = () => {
         className="fixed left-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-6 z-40"
       >
         <a
-          href="https://github.com"
+          href="https://github.com/jesumjoe"
           target="_blank"
           rel="noopener noreferrer"
           className="text-muted-foreground hover:text-primary transition-colors duration-300"
@@ -102,7 +102,7 @@ const HeroSection = () => {
           </svg>
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/jesumjoe"
           target="_blank"
           rel="noopener noreferrer"
           className="text-muted-foreground hover:text-primary transition-colors duration-300"
