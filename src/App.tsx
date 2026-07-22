@@ -15,13 +15,10 @@ const queryClient = new QueryClient();
 
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(() => {
-    return !sessionStorage.getItem('appLoaded');
-  });
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
-    sessionStorage.setItem('appLoaded', 'true');
   };
 
   return (

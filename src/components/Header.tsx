@@ -7,9 +7,7 @@ const Header = () => {
   const location = useLocation();
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showLogo, setShowLogo] = useState(() => {
-    return !!sessionStorage.getItem('appLoaded');
-  });
+  const [showLogo, setShowLogo] = useState(false);
 
   useEffect(() => {
     if (!showLogo) {
