@@ -28,7 +28,7 @@ const HeroSection = () => {
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-[12vw] md:text-[15vw] font-bold text-foreground m-0"
+              className="font-display text-[13vw] md:text-[9vw] lg:text-[8vw] font-bold text-foreground m-0 tracking-tight"
             >
               FULL STACK
             </motion.h1>
@@ -44,7 +44,7 @@ const HeroSection = () => {
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-[12vw] md:text-[15vw] font-bold text-primary m-0"
+              className="font-display text-[13vw] md:text-[9vw] lg:text-[8vw] font-bold text-primary m-0 tracking-tight"
             >
               DEVELOPER.
             </motion.h1>
