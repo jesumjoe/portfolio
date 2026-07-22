@@ -113,7 +113,7 @@ const ProjectsSection = () => {
           - Card 3: left-aligned with indent, pushed down, slight negative rotation
           All in normal flow — no absolute positioning → no overflow issues.
         */}
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-16 md:gap-0">
 
           {/* Card 1 — left, tilted left */}
           <motion.div
@@ -122,7 +122,7 @@ const ProjectsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
-            className="w-[40%] self-start origin-bottom-right"
+            className="w-full md:w-[40%] self-start origin-bottom-right"
           >
             <ProjectCard
               project={featuredProjects[0]}
@@ -137,7 +137,7 @@ const ProjectsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
-            className="w-[40%] self-end origin-bottom-left mt-[-28%]"
+            className="w-full md:w-[40%] self-end origin-bottom-left md:mt-[-28%]"
           >
             <ProjectCard
               project={featuredProjects[1]}
@@ -152,7 +152,7 @@ const ProjectsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
-            className="w-[40%] ml-[12%] origin-bottom-right mt-[-22%]"
+            className="w-full md:w-[40%] md:ml-[12%] origin-bottom-right md:mt-[-22%]"
           >
             <ProjectCard
               project={featuredProjects[2]}
