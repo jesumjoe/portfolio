@@ -11,7 +11,7 @@ const Footer = () => {
     >
       <div className="w-full px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <span className="font-display text-3xl font-bold text-foreground uppercase tracking-widest">
-          JMJ.
+          JD.
         </span>
         <p className="text-muted-foreground text-sm uppercase tracking-[0.2em]">
           © {new Date().getFullYear()} Jesu Mariya Joe D. All rights reserved.
