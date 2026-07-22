@@ -9,6 +9,7 @@ export interface Project {
   category?: string;
   year?: string;
   color?: string;
+  imageUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -19,9 +20,11 @@ export const projects: Project[] = [
     longDescription: "Built a complete e-commerce solution featuring product catalog management, real-time inventory tracking, Stripe payment integration, and a rich admin dashboard. The frontend is built with React and the backend with Node.js/Express backed by PostgreSQL. Includes features like cart persistence, order tracking, and email notifications.",
     tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
     githubUrl: "https://github.com",
+    liveUrl: "https://example.com",
     category: "Full Stack",
     color: "from-blue-900 via-blue-800 to-indigo-900",
     year: "2024",
+    imageUrl: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop",
   },
   {
     id: "design-system",
@@ -33,6 +36,7 @@ export const projects: Project[] = [
     category: "UI / UX",
     color: "from-emerald-900 via-teal-800 to-cyan-900",
     year: "2024",
+    imageUrl: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop",
   },
   {
     id: "saas-dashboard",
@@ -44,6 +48,7 @@ export const projects: Project[] = [
     category: "Full Stack",
     color: "from-orange-900 via-red-900 to-rose-900",
     year: "2023",
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
   },
   {
     id: "api-gateway",
@@ -55,5 +60,6 @@ export const projects: Project[] = [
     category: "APIs & Databases",
     color: "from-violet-900 via-purple-900 to-fuchsia-900",
     year: "2023",
+    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000&auto=format&fit=crop",
   },
 ];

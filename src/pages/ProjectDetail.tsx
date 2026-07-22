@@ -74,89 +74,111 @@ const ProjectDetail = () => {
           </motion.p>
         </div>
 
-        {/* Project Visual Banner */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full aspect-[21/9] bg-secondary flex items-center justify-center relative overflow-hidden border-b border-white/10"
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
-          <span className="font-display text-[20vw] font-bold text-white/5 select-none">
-            {project.title.substring(0, 2).toUpperCase()}
-          </span>
-        </motion.div>
-
-        {/* Content */}
-        <div className="px-6 md:px-12 py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-24">
-            {/* Long Description */}
+        {/* Content Grid */}
+        <div className="px-6 md:px-12 pb-24 pt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+            {/* Left Column: Image */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="lg:col-span-2"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-full sticky top-32 flex flex-col gap-6"
             >
-              <h2 className="font-display text-4xl font-bold text-foreground mb-8 uppercase tracking-tight">
-                About This Project
-              </h2>
-              <p className="text-muted-foreground leading-relaxed font-light text-2xl">
-                {project.longDescription}
-              </p>
-            </motion.div>
-
-            {/* Sidebar Links & Tech */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-col gap-12"
-            >
-              <div>
-                <h3 className="font-display text-2xl font-bold text-foreground mb-6 uppercase tracking-tight">
-                  Links
-                </h3>
-                <div className="flex flex-col gap-4">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-4 p-4 border border-white/10 hover:bg-primary hover:border-primary transition-all duration-300"
-                  >
-                    <Github className="w-6 h-6 group-hover:text-background transition-colors" />
-                    <span className="font-display uppercase tracking-widest text-sm group-hover:text-background transition-colors">
-                      View on GitHub
+              <div className="w-full aspect-[4/3] bg-secondary rounded-2xl overflow-hidden relative border border-white/10">
+                {project.imageUrl ? (
+                  <img 
+                    src={project.imageUrl} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="flex items-center justify-center w-full h-full">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+                    <span className="font-display text-[15vw] lg:text-[8vw] font-bold text-white/5 select-none relative z-10">
+                      {project.title.substring(0, 2).toUpperCase()}
                     </span>
-                  </a>
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-4 p-4 bg-primary hover:bg-foreground transition-all duration-300"
-                    >
-                      <ExternalLink className="w-6 h-6 text-background" />
-                      <span className="font-display uppercase tracking-widest text-sm text-background">
-                        Live Demo
-                      </span>
-                    </a>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
 
+              {project.liveUrl && (
+                <button
+                  onClick={() => navigate(`/project/${project.id}/preview`)}
+                  className="w-full group relative inline-flex items-center justify-center px-8 py-4 font-display text-xl uppercase tracking-widest text-background bg-primary hover:bg-foreground transition-colors duration-300"
+                >
+                  <span className="relative z-10 flex items-center gap-3">
+                    Live Preview
+                    <ExternalLink className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  </span>
+                </button>
+              )}
+            </motion.div>
+
+            {/* Right Column: Text & Links */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-col gap-16"
+            >
+              {/* Long Description */}
               <div>
-                <h3 className="font-display text-2xl font-bold text-foreground mb-6 uppercase tracking-tight">
-                  Technologies
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-4 py-2 border border-white/20 text-sm text-muted-foreground uppercase tracking-wider"
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8 uppercase tracking-tight">
+                  About This Project
+                </h2>
+                <p className="text-muted-foreground leading-relaxed font-light text-xl md:text-2xl">
+                  {project.longDescription}
+                </p>
+              </div>
+
+              {/* Sidebar Links & Tech */}
+              <div className="flex flex-col gap-12">
+                <div>
+                  <h3 className="font-display text-2xl font-bold text-foreground mb-6 uppercase tracking-tight">
+                    Links
+                  </h3>
+                  <div className="flex flex-col gap-4">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-4 p-4 border border-white/10 hover:bg-primary hover:border-primary transition-all duration-300"
                     >
-                      {tag}
-                    </span>
-                  ))}
+                      <Github className="w-6 h-6 group-hover:text-background transition-colors" />
+                      <span className="font-display uppercase tracking-widest text-sm group-hover:text-background transition-colors">
+                        View on GitHub
+                      </span>
+                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-4 p-4 bg-primary hover:bg-foreground transition-all duration-300"
+                      >
+                        <ExternalLink className="w-6 h-6 text-background" />
+                        <span className="font-display uppercase tracking-widest text-sm text-background">
+                          Live Demo
+                        </span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-display text-2xl font-bold text-foreground mb-6 uppercase tracking-tight">
+                    Technologies
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-4 py-2 border border-white/20 text-sm text-muted-foreground uppercase tracking-wider"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>

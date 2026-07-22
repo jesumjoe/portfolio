@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
+import ProjectPreview from "./pages/ProjectPreview";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
 import { LoadingScreen } from "./components/LoadingScreen";
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="/project/:id/preview" element={<ProjectPreview />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

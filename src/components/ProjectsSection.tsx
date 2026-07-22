@@ -34,7 +34,15 @@ const ProjectCard = ({
   <div className="group cursor-pointer w-full" onClick={onClick}>
     {/* Image / Placeholder */}
     <div className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: "3/4" }}>
-      <PlaceholderCard color={project.color} title={project.title} />
+      {project.imageUrl ? (
+        <img 
+          src={project.imageUrl} 
+          alt={project.title} 
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[0.16,1,0.3,1]" 
+        />
+      ) : (
+        <PlaceholderCard color={project.color} title={project.title} />
+      )}
 
       {/* Hover overlay */}
       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
@@ -50,9 +58,12 @@ const ProjectCard = ({
         <p className="text-muted-foreground text-xs font-display uppercase tracking-[0.15em] mb-1">
           {project.category ?? project.tags[0]} / {project.year ?? "2024"}
         </p>
-        <h3 className="font-display text-xl md:text-2xl font-bold text-foreground uppercase tracking-tight group-hover:text-primary transition-colors duration-300 leading-tight">
+        <h3 className="font-display text-xl md:text-2xl font-bold text-foreground uppercase tracking-tight group-hover:text-primary transition-colors duration-300 leading-tight mb-2">
           {project.title}
         </h3>
+        <p className="text-muted-foreground text-sm line-clamp-2">
+          {project.description}
+        </p>
       </div>
       <div className="shrink-0 w-9 h-9 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500 mt-1">
         <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-background transition-colors duration-500" />
