@@ -14,31 +14,26 @@ export default {
   		}
   	},
   	extend: {
+  		fontSize: {
+  			'10xl': ['10rem', { lineHeight: '1' }],
+  			'11xl': ['12rem', { lineHeight: '1' }],
+  			'12xl': ['14rem', { lineHeight: '1' }],
+  		},
   		fontFamily: {
   			sans: [
-  				'Space Grotesk',
+  				'Inter',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',
-  				'BlinkMacSystemFont',
-  				'Segoe UI',
-  				'Roboto',
-  				'Helvetica Neue',
-  				'Arial',
-  				'Noto Sans',
   				'sans-serif'
   			],
   			display: [
-  				'Space Grotesk',
+  				'Anton',
   				'sans-serif'
   			],
   			serif: [
   				'Lora',
   				'ui-serif',
-  				'Georgia',
-  				'Cambria',
-  				'Times New Roman',
-  				'Times',
   				'serif'
   			],
   			mono: [
@@ -170,13 +165,14 @@ export default {
   			'slide-in-left': 'slide-in-left 0.5s ease-out forwards'
   		},
   		boxShadow: {
-  			'2xs': 'var(--shadow-2xs)',
-  			xs: 'var(--shadow-xs)',
-  			sm: 'var(--shadow-sm)',
-  			md: 'var(--shadow-md)',
-  			lg: 'var(--shadow-lg)',
-  			xl: 'var(--shadow-xl)',
-  			'2xl': 'var(--shadow-2xl)'
+  			'2xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+  			xs: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)',
+  			sm: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
+  			md: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)',
+  			lg: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+  			xl: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+  			'2xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+            'glow': '0 0 20px rgba(139, 92, 246, 0.3)',
   		}
   	}
   },

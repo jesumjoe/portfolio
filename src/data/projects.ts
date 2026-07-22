@@ -6,40 +6,54 @@ export interface Project {
   tags: string[];
   githubUrl: string;
   liveUrl?: string;
-  image?: string;
+  category?: string;
+  year?: string;
+  color?: string;
 }
 
 export const projects: Project[] = [
   {
-    id: "secure-auth-system",
-    title: "Secure Auth System",
-    description: "A robust authentication system with multi-factor authentication and OAuth integration.",
-    longDescription: "Built a comprehensive authentication system featuring JWT-based sessions, multi-factor authentication via TOTP, OAuth 2.0 integration with major providers, and secure password hashing using bcrypt. Implemented rate limiting and brute force protection to ensure maximum security.",
-    tags: ["Node.js", "Express", "JWT", "OAuth", "Security"],
+    id: "ecommerce-platform",
+    title: "E-Commerce Platform",
+    description: "A full stack e-commerce platform with real-time inventory, payments, and an admin dashboard.",
+    longDescription: "Built a complete e-commerce solution featuring product catalog management, real-time inventory tracking, Stripe payment integration, and a rich admin dashboard. The frontend is built with React and the backend with Node.js/Express backed by PostgreSQL. Includes features like cart persistence, order tracking, and email notifications.",
+    tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
     githubUrl: "https://github.com",
+    category: "Full Stack",
+    color: "from-blue-900 via-blue-800 to-indigo-900",
+    year: "2024",
   },
   {
-    id: "network-monitor",
-    title: "Network Monitor Dashboard",
-    description: "Real-time network monitoring dashboard with threat detection capabilities.",
-    longDescription: "Developed a comprehensive network monitoring solution that provides real-time visibility into network traffic, automated threat detection using machine learning algorithms, and instant alerting for suspicious activities. Features include traffic analysis, bandwidth monitoring, and detailed security reports.",
-    tags: ["Python", "React", "TensorFlow", "WebSocket"],
+    id: "design-system",
+    title: "Design System & UI Kit",
+    description: "A production-ready component library and design system built with React and Storybook.",
+    longDescription: "Designed and built a comprehensive design system from scratch, featuring 50+ accessible components, a consistent token-based theming engine, dark/light mode support, and full Storybook documentation. Used by multiple internal projects to ensure UI consistency and speed up development workflows.",
+    tags: ["React", "TypeScript", "Storybook", "CSS"],
     githubUrl: "https://github.com",
+    category: "UI / UX",
+    color: "from-emerald-900 via-teal-800 to-cyan-900",
+    year: "2024",
   },
   {
-    id: "cloud-deploy-platform",
-    title: "Cloud Deploy Platform",
-    description: "Automated deployment platform with container orchestration and CI/CD pipelines.",
-    longDescription: "Created a full-featured deployment platform that automates the entire software delivery pipeline. Supports Docker containerization, Kubernetes orchestration, automated testing, and blue-green deployments. Includes comprehensive logging, monitoring, and rollback capabilities.",
-    tags: ["Docker", "Kubernetes", "AWS", "CI/CD"],
+    id: "saas-dashboard",
+    title: "SaaS Analytics Dashboard",
+    description: "A real-time analytics dashboard with WebSocket-driven charts, user management, and billing.",
+    longDescription: "Developed a multi-tenant SaaS dashboard featuring real-time data visualizations powered by WebSockets, role-based user management, Stripe subscription billing, and an API-first backend with rate limiting and caching. Built with Next.js, Prisma, and deployed on AWS with a CI/CD pipeline.",
+    tags: ["Next.js", "Prisma", "WebSocket", "AWS"],
     githubUrl: "https://github.com",
+    category: "Full Stack",
+    color: "from-orange-900 via-red-900 to-rose-900",
+    year: "2023",
   },
   {
-    id: "vulnerability-scanner",
-    title: "Vulnerability Scanner",
-    description: "Automated security scanner for identifying vulnerabilities in web applications.",
-    longDescription: "Built an automated vulnerability assessment tool that scans web applications for common security issues including SQL injection, XSS, CSRF, and misconfigurations. Generates detailed reports with remediation recommendations and severity ratings according to CVSS standards.",
-    tags: ["Python", "Security", "OWASP", "Automation"],
+    id: "api-gateway",
+    title: "REST API Gateway",
+    description: "A scalable API gateway with auth, rate limiting, caching, and auto-generated docs.",
+    longDescription: "Built a production-grade API gateway that handles authentication (JWT + OAuth), request rate limiting, Redis caching, and automatic OpenAPI documentation generation. Designed to sit in front of microservices and unify their interfaces. Includes a developer portal for API key management and usage analytics.",
+    tags: ["Node.js", "Redis", "Docker", "OpenAPI"],
     githubUrl: "https://github.com",
+    category: "APIs & Databases",
+    color: "from-violet-900 via-purple-900 to-fuchsia-900",
+    year: "2023",
   },
 ];
