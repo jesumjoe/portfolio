@@ -23,36 +23,36 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center w-full leading-[0.85] text-center"
         >
-          <div className="overflow-hidden">
-            <motion.h1
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-[13vw] md:text-[9vw] lg:text-[8vw] font-bold text-foreground m-0 tracking-tight"
-            >
-              FULL STACK
-            </motion.h1>
-          </div>
-          <div className="overflow-hidden flex items-center gap-4 md:gap-8 justify-center w-full">
+          <div className="overflow-hidden flex items-center gap-4 md:gap-8 justify-center w-full px-4 md:px-8">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="hidden md:flex h-4 bg-primary flex-grow max-w-[200px]"
+              transition={{ duration: 0.7, delay: 1 }}
+              className="hidden md:flex h-2 md:h-3 lg:h-4 bg-primary flex-grow max-w-[60px] md:max-w-[120px] lg:max-w-[200px]"
             />
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-[13vw] md:text-[9vw] lg:text-[8vw] font-bold text-primary m-0 tracking-tight"
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="font-display text-[7.5vw] md:text-[5vw] lg:text-[4.5vw] font-bold text-foreground m-0 tracking-tight whitespace-nowrap flex items-center"
             >
-              DEVELOPER.
+              <span>J</span>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "auto" }}
+                transition={{ duration: 1.2, delay: 0.8, ease: "linear" }}
+                className="overflow-hidden flex items-center"
+              >
+                <span>ESU MARIYA&nbsp;</span>
+                <span className="text-primary">JOE&nbsp;</span>
+              </motion.div>
+              <span className="text-primary">D</span>
             </motion.h1>
             <motion.div 
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="hidden md:flex h-4 bg-primary flex-grow max-w-[200px]"
+              transition={{ duration: 0.7, delay: 1 }}
+              className="hidden md:flex h-2 md:h-3 lg:h-4 bg-primary flex-grow max-w-[60px] md:max-w-[120px] lg:max-w-[200px]"
             />
           </div>
         </motion.div>
@@ -66,8 +66,7 @@ const HeroSection = () => {
         >
           <div className="w-16 h-1 bg-foreground hidden md:block shrink-0" />
           <p className="text-xl md:text-2xl font-light text-muted-foreground uppercase tracking-widest leading-relaxed">
-            Crafting fast, beautiful, and scalable web products. <br className="hidden md:block" />
-            <span className="font-bold text-foreground">Jesu Mariya Joe D.</span>
+            Crafting fast, beautiful, and scalable web products.
           </p>
         </motion.div>
 

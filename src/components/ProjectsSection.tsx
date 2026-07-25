@@ -74,7 +74,8 @@ const ProjectCard = ({
 
 const ProjectsSection = () => {
   const navigate = useNavigate();
-  const featuredProjects = projects.slice(0, 3);
+  // Filter for featured projects and take up to 3
+  const featuredProjects = projects.filter(p => p.featured).slice(0, 3);
   const sectionRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
